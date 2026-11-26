@@ -236,6 +236,11 @@ a { color: inherit; text-decoration: none; }
 }
 .pd-img.is-full img { width: 100%; }   /* 1320px로 꽉 채우고 싶은 이미지에만 추가 */
 
+.pd-img.w-860  img { 
+  display: block;
+  width: min(860px, 100%);
+  margin: 0 auto;
+ }
 .pd-img.w-880  img { width: min(880px, 100%); }
 .pd-img.w-1000 img { width: min(1000px, 100%); }
 .pd-img.w-1200 img { width: min(1200px, 100%); }
