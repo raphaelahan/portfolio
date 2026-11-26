@@ -304,6 +304,11 @@ a { color: inherit; text-decoration: none; }
 .pd > .pd-sec + .pd-compare,
 .pd > .pd-img + .pd-compare { margin-top: 40px; }
 
+.pd-stack { display: flex; flex-direction: column; }
+.pd-stack .pd-img + .pd-img { margin-top: 0; }
+.pd-stack .pd-img img { width: 100%; display: block; }
+.pd > .pd-sec + .pd-stack { margin-top: 40px; }
+
 @media (max-width: 1000px) {
   .pd > .pd-sec + .pd-compare,
   .pd > .pd-img + .pd-compare { margin-top: 40px; }
