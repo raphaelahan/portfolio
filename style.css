@@ -236,11 +236,15 @@ a { color: inherit; text-decoration: none; }
 }
 .pd-img.is-full img { width: 100%; }   /* 1320px로 꽉 채우고 싶은 이미지에만 추가 */
 
-.pd-img.w-860  img { 
-  display: block;
+.pd-img.w-860 {
+  display: flex;
+  justify-content: center;
+}
+.pd-img.w-860 img {
   width: min(860px, 100%);
-  margin: 0 auto;
- }
+  height: auto;
+  margin: 0;
+}
 .pd-img.w-880  img { width: min(880px, 100%); }
 .pd-img.w-1000 img { width: min(1000px, 100%); }
 .pd-img.w-1200 img { width: min(1200px, 100%); }
@@ -260,6 +264,8 @@ a { color: inherit; text-decoration: none; }
 .pd > .pd-img + .pd-img,
 .pd > .pd-img + .pd-row,
 .pd > .pd-row + .pd-img { margin-top: 40px; }    /* 이미지 ↔ 이미지 40px */
+.pd > .pd-info + .pd-stack,
+.pd > .pd-head + .pd-stack { margin-top: 16px; }
 
 /* 비교 레이아웃: 왼쪽 | 화살표 | 오른쪽 */
 .pd-compare {
@@ -309,9 +315,11 @@ a { color: inherit; text-decoration: none; }
 .pd > .pd-sec + .pd-compare,
 .pd > .pd-img + .pd-compare { margin-top: 40px; }
 
-.pd-stack { display: flex; flex-direction: column; }
-.pd-stack .pd-img + .pd-img { margin-top: 0; }
-.pd-stack .pd-img img { width: 100%; display: block; }
+.pd-stack { display: flex; flex-direction: column; gap: 0; }
+.pd-stack .pd-img { margin: 0; line-height: 0; }
+.pd-stack .pd-img + .pd-img { margin-top: -1px; }   /* 1px 겹쳐서 틈 제거 */
+.pd-stack .pd-img img { display: block; }
+.pd-stack .pd-img:not([class*="w-"]) img { width: 100%; }
 .pd > .pd-sec + .pd-stack { margin-top: 40px; }
 
 @media (max-width: 1000px) {
